@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pinakiukazuredevops 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pinakiukazuredevops
+  template:
+    metadata:
+      labels:
+        app: pinakiukazuredevops 
+    spec:
+      containers:
+        - name: pinakiukazuredevops 
+          image: pmmyregistry.azurecr.io/pinakiukazuredevops
+          ports:
+          - containerPort: 80
