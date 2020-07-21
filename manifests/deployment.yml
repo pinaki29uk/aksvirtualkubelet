@@ -17,6 +17,8 @@ spec:
           image: pmmyregistry.azurecr.io/pinakiukazuredevops
           ports:
           - containerPort: 80
+      imagePullSecrets:
+        - name: pmmysecret
       nodeSelector:
         kubernetes.io/role: agent
         beta.kubernetes.io/os: linux
@@ -24,3 +26,4 @@ spec:
       tolerations:
       - key: virtual-kubelet.io/provider
         operator: Exists
+
